@@ -6,7 +6,7 @@ var webtoon = require('./_router/webtoon');
 var MTitle = require('./_model/webtoon');
 var PythonShell = require('python-shell');
 
-app.use('/client', express.static(__dirname + '/client'));
+app.use('/', express.static(__dirname + '/vitality'));
 // app.use(express.static('client'));
 // app.use(express.static('client/src/js'));
 // app.use(express.static('client/templates/'))
@@ -23,7 +23,7 @@ db.once('open', function callback() {
 });
 app.get('/', function (req, res) {
     // res.send("오여사!");
-    res.sendFile(__dirname+"/client/src/index.html");
+    res.sendFile(__dirname+"/index.html");
 });
 app.listen(3000, function () {
     console.log("오여사");
