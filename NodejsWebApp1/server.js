@@ -6,7 +6,9 @@ var webtoon = require('./_router/webtoon');
 var MTitle = require('./_model/webtoon');
 var PythonShell = require('python-shell');
 
-app.use('/', express.static(__dirname + '/vitality'));
+app.use(express.static(__dirname+"/_view/app"));
+app.use('/', express.static(__dirname));
+app.use('/_view/', express.static(__dirname + '/_view'));
 // app.use(express.static('client'));
 // app.use(express.static('client/src/js'));
 // app.use(express.static('client/templates/'))
@@ -23,7 +25,7 @@ db.once('open', function callback() {
 });
 app.get('/', function (req, res) {
     // res.send("오여사!");
-    res.sendFile(__dirname+"/index.html");
+    res.sendFile(__dirname+"/_view/index.html");
 });
 app.listen(3000, function () {
     console.log("오여사");
@@ -39,14 +41,5 @@ app.get('/update', function (req, res) {
         res.send(results);
         console.log(results);
     });
-});
-app.get('/:id', function (req, res) {
-    var id = req.params.id;
-    if (id == '왜')
-        res.send("사랑해");
-    else if (id == '응')
-        res.send("그냥");
-    else if (id == '네')
-        res.send("사랑해오여사");
 });
 //# sourceMappingURL=server.js.map
