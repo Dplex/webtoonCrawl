@@ -9,6 +9,7 @@ var PythonShell = require('python-shell');
 app.use(express.static(__dirname+"/_view/app"));
 app.use('/', express.static(__dirname));
 app.use('/_view/', express.static(__dirname + '/_view'));
+app.use('/vitality', express.static(__dirname + '/_view/vitality'));
 // app.use(express.static('client'));
 // app.use(express.static('client/src/js'));
 // app.use(express.static('client/templates/'))
