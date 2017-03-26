@@ -16,6 +16,7 @@ db.once('open', function callback() {
     test = mongoose.model('test', testSchema);
 });
 
+app.use()
 
 app.get('/', function (req, res) {
     res.send("오여사!");

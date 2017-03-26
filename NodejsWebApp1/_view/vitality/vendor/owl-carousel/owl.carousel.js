@@ -19,7 +19,7 @@ if (typeof Object.create !== "function") {
         return new F();
     };
 }
-(function ($, window, document) {
+var test = (function ($, window, document) {
 
     var Carousel = {
         init : function (options, el) {
@@ -63,6 +63,7 @@ if (typeof Object.create !== "function") {
         },
 
         logIn : function () {
+            console.log("logIn")
             var base = this;
 
             base.$elem.data("owl-originalStyles", base.$elem.attr("style"))

@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import '../vitality/vendor/owl-carousel/owl.carousel';
+
+declare var hey: any;
+declare var test: any;
+export class webtoon implements AfterViewInit {
+    ngAfterViewInit(): void {
+        var s = document.createElement('script')
+        s.type = "text/javascript";
+        s.innerHTML = "console.log('done')";
+        s.src = "../vitality/vendor/owl-carousel/owl.carousel.js";
+        document.body.appendChild(s);
+    }
+    id: number;
+    day: String;
+    name: String;
+    imgsrc: String;
+    
+}
 
 @Component({
     selector: 'nodejsapp',
-    template: '<h1>Hello {{name}}</h1>\
-    <hr class="colored">\
-    <p>ALl of sample</p>',
+    templateUrl: "_view/app/app.component.html",
 
 })
 

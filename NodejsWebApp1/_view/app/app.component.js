@@ -9,6 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+require('../vitality/vendor/owl-carousel/owl.carousel');
+var webtoon = (function () {
+    function webtoon() {
+    }
+    webtoon.prototype.ngAfterViewInit = function () {
+        var s = document.createElement('script');
+        s.type = "text/javascript";
+        s.innerHTML = "console.log('done')";
+        s.src = "../vitality/vendor/owl-carousel/owl.carousel.js";
+        document.body.appendChild(s);
+    };
+    return webtoon;
+}());
+exports.webtoon = webtoon;
 var AppComponent = (function () {
     function AppComponent() {
         this.name = "오여사";
@@ -17,9 +31,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'nodejsapp',
-            template: '<h1>Hello {{name}}</h1>\
-    <hr class="colored">\
-    <p>ALl of sample</p>',
+            templateUrl: "_view/app/app.component.html",
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
